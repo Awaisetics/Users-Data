@@ -15,21 +15,20 @@ class Users {
     }
 
     constructHTML(data) {
-        if (data) {
-            const usersHtml = data.map((user) => {
-                return `
-                    <tr id='u-${user.id}'>
-                        <th scope="row">${user.id}</th>
-                        <td>${user.name}</td>   
-                        <td>${user.email}</td>
-                        <td>${user.address.city}</td>
-                        <td><a href="https://${user.website}" target="_blank">${user.website}</a></td>
-                        <td><button onclick='user.delete(${user.id})' class="btn btn-sm btn-danger">Delete</button></td>
-                    </tr>
-                `;
-            }).join('');
-            this.list.innerHTML = usersHtml;
-        }
+        console.log(data);
+        const usersHtml = data.map((user) => {
+            return `
+                <tr id='u-${user.id}'>
+                    <th scope="row">${user.id}</th>
+                    <td>${user.name}</td>   
+                    <td>${user.email}</td>
+                    <td>${user.address.city}</td>
+                    <td><a href="https://${user.website}" target="_blank">${user.website}</a></td>
+                    <td><button onclick='user.delete(${user.id})' class="btn btn-sm btn-danger">Delete</button></td>
+                </tr>
+            `;
+        }).join('');
+        this.list.innerHTML = usersHtml;
 
     }
 
